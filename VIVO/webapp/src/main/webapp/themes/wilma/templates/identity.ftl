@@ -1,4 +1,7 @@
 <#-- $This file is distributed under the terms of the license in LICENSE$ -->
+<div id="udg-identifier">
+    <img src="/themes/wilma/images/logoudg.jpg" />
+</div>
 
 <header id="branding" role="banner">
 

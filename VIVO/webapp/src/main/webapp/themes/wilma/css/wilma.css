@@ -3,6 +3,8 @@
 @charset "UTF-8";
 /* CSS Document */
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,400&display=swap');
+
 /* Tell the browser to render HTML 5 elements as block */
 header,
 hgroup,
@@ -20,15 +22,16 @@ html,
 body {
     padding: 0;
     height: 100%; /* needed for container min-height */
-    font-family: "Lucida Sans Unicode","Lucida Grande", Geneva, helvetica, sans-serif;
+    font-family: 'Open Sans', helvetica, sans-serif;
+    font-weight: 400;
     height: auto !important; /* real browsers */
     height: 100%; /* IE6: treaded as min-height*/;
     min-height: 100%; /* real browsers */
     margin: 0 auto;
 }
 body {
-   /* background: #f3f3f0 url(../images/header-background.png) center 0 no-repeat; */
-   background: red url(../images/header-background.png) center 0 no-repeat;
+    /* background: #f3f3f0 url(../images/header-background.png) center 0 no-repeat; */
+    /* background: white url(../images/header-background.png) center 0 no-repeat; */
 }
 a {
     color: #2485AE;
@@ -111,9 +114,9 @@ label.inline {
 #showAddFormButton:visited,
 input.submit,
 input.submit:visited,
-/* the id selectors are used temporarily due to the custom jsp tags (<v:input>)
-for editing forms which require an id and do not allow a class. This will be
-removed once we refactor the editing forms to Freemarker */
+    /* the id selectors are used temporarily due to the custom jsp tags (<v:input>)
+    for editing forms which require an id and do not allow a class. This will be
+    removed once we refactor the editing forms to Freemarker */
 input#submit,
 input#submit:visited,
 input.form-button,
@@ -235,8 +238,8 @@ form a:active.cancel {
     margin-bottom: .3em;
 }
 p.submit {
-  margin-top: 0;
-  padding-top: 0;
+    margin-top: 0;
+    padding-top: 0;
 }
 .editingForm table {
     border-color: #dfe6e6;
@@ -362,17 +365,17 @@ form h2 {
     padding-bottom: 10px;
 }
 form select {
-   border: 0;
-   font-size: 14px;
-   padding: .5em;
-   background: #fff;
-   border: 1px solid #e0dfdf;
-   border-radius: 5px;
-   -moz-border-radius: 5px;
-   -webkit-border-radius: 5px;
-   margin-bottom: .8em;
-   margin-top: .7em;
-   margin-right: .5em;
+    border: 0;
+    font-size: 14px;
+    padding: .5em;
+    background: #fff;
+    border: 1px solid #e0dfdf;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-bottom: .8em;
+    margin-top: .7em;
+    margin-right: .5em;
 }
 .notice {
     margin-top: 1em;
@@ -444,21 +447,30 @@ hr.formDivider {
 /* HOMEPAGE AND INTERIOR PAGES STYLES -------------->  */
 /* ------------------------------------------------->  */
 
+#udg-identifier {
+    width: 970px;
+    margin: 16px auto;
+}
+
 /* HEADER ------>  */
 #branding {
     position: relative;
     width: 970px;
-    height: 114px;
-    margin: 0 auto;
+    height: 69px;
+    margin: 16px auto 0 auto;
+    background: #06436B url(/themes/wilma/images/backtopudg.jpg);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 /* BRANDING ------>  */
 h1.vivo-logo {
     position: absolute;
     width: 442px;
-    height: 59px;
-    top: 28px;
+    height: 40px;
+    top: 16px;
     left: 0;
     background: url(../images/VIVO-logo.png) 0 0 no-repeat;
+    background-size: auto 40px;
 }
 h1.vivo-logo a {
     display: block;
@@ -537,18 +549,23 @@ input.search-vivo {
 ul#main-nav {
     display: block;
     width: 968px;
-    height: 46px;
+    height: 64px;
     border: 1px solid #dce4e3;
-    background-color: #f7f9f9;
+    background-color: #f0f0f0;
     margin: 0 auto;
     list-style: none;
     font-size: 1em;
     color: #706a66;
+    background: linear-gradient(#ffffff, #e8e8e8);
+    display: flex;
+    justify-content: space-between;
 }
 #main-nav li {
     float: left;
-    line-height: 46px;
-    background: url(../images/separator-main-nav.jpg) right -2px no-repeat;
+    line-height: 64px;
+    border-left: 1px solid white;
+    text-align: center;
+    flex: 1;
 }
 #main-nav li a {
     padding-left: 16px;
@@ -562,8 +579,7 @@ ul#main-nav {
 }
 #main-nav li a.selected {
     color: #002b44;
-    background: url(../images/selected-main-nav.jpg) left -1px no-repeat;
-    margin-left: 18px;
+    border-bottom: 4px solid #06436B;
 }
 /* WRAPPER CONTENT------>  */
 #wrapper-content {
@@ -573,6 +589,7 @@ ul#main-nav {
     background: #fff;
     min-height: 710px;
     padding: 20px;
+    border: 1px solid #ECECEC;
 }
 /* INTRO-BLURB ------>  */
 #intro {
@@ -616,6 +633,8 @@ ul.individual-urls-people li a {
     margin-bottom: 30px;
     overflow: hidden;
     margin-top: 20px;
+    background: linear-gradient(#ffffff, #f0f0f0);
+    box-shadow: 0 0 4px rgba(0,0,0, 0.15)
 }
 body.login #login {
     float: none;
@@ -750,11 +769,11 @@ p.external-auth {
 }
 p.external-auth a.blue,
 p.external-auth a.blue:visited {
-     background-color: #398AAC;
-     width: 180px;
-     margin-bottom: 17px;
-     line-height: 1.3em;
-     padding-top: 10px;
+    background-color: #398AAC;
+    width: 180px;
+    margin-bottom: 17px;
+    line-height: 1.3em;
+    padding-top: 10px;
 }
 p.external-auth a.blue:hover {
     background-color: #58A2C1;
@@ -771,7 +790,7 @@ p.external-auth a.blue:hover {
     font-size: 22px;
     margin-bottom: 15px;
     color: #2485AE;
-		padding-left: 24px;
+    padding-left: 24px;
 }
 #search-home-field {
     width: 483px;
@@ -803,52 +822,52 @@ input.search-home-vivo {
 /* SEARCH HOME------>  */
 
 #search-home-field {
-		background: url(../images/search-field-and-button.gif) 0 0 no-repeat;
-		width: 520px;
+    background: url(../images/search-field-and-button.gif) 0 0 no-repeat;
+    width: 520px;
 }
 #search-home-field input.search {
-	 	background-color: transparent;
-	 	color: #fff;
-		border: none;
+    background-color: transparent;
+    color: #fff;
+    border: none;
 }
 a.filter-search {
-	right: 109px;
+    right: 109px;
 }
 input.search-homepage {
-		border: 0;
-		background-color: #f9fafa;
-		background-position: right;
-		opacity: .5;
-		text-align:right;
+    border: 0;
+    background-color: #f9fafa;
+    background-position: right;
+    opacity: .5;
+    text-align:right;
 }
 
 .filter-default {
-		background: url(../images/filteredSearch.gif) 0 0 no-repeat;
+    background: url(../images/filteredSearch.gif) 0 0 no-repeat;
 }
 .filter-active {
-		background: url(../images/filteredSearchActive.gif) 0 0 no-repeat;
+    background: url(../images/filteredSearchActive.gif) 0 0 no-repeat;
 }
 #filter-search-nav {
-		background-color: #2d3535;
-		color: #fff;
-		background-color: #2d3535;
-		color: #fff;
-		right: 109px;
+    background-color: #2d3535;
+    color: #fff;
+    background-color: #2d3535;
+    color: #fff;
+    right: 109px;
 }
 #filter-search-nav li {
-		background-image: none;
-		padding-left: 0;
-		margin-left: 0;
+    background-image: none;
+    padding-left: 0;
+    margin-left: 0;
 }
 #filter-search-nav a.active,
 #stats p,
 p.request-account a,
 ul#header-nav a {
-   color: #fff;
+    color: #fff;
 }
 #filter-search-nav a {
-		border-bottom: 1px dotted #4f5656;
-		color: #1483A4;
+    border-bottom: 1px dotted #4f5656;
+    color: #1483A4;
 }
 
 /* BROWSE ------>  */
@@ -881,68 +900,65 @@ a.view-all-style {
 
 /* HOME STATS----->  */
 .home-sections {
-		border-top: 1px dotted #dbe3e3; /* stroke */
-		border-bottom: 1px dotted #dbe3e3; /* stroke */
-		background-color: #fff; /* layer fill content */
+    border-top: 1px dotted #dbe3e3; /* stroke */
+    border-bottom: 1px dotted #dbe3e3; /* stroke */
+    background-color: #fff; /* layer fill content */
 }
 .home-sections h4 {
-		border-top: 1px solid rgba(220,228,227,.42); /* stroke */
-		border-bottom: 1px solid rgba(220,228,227,.42); /* stroke */
-		background-color: #395d7f; /* layer fill content */
-		border-bottom: 2px solid #62b6d7;
-		color: #fff;
+    border-top: 1px solid rgba(220,228,227,.42); /* stroke */
+    color: #2485AE;
 }
 #home-stats {
-		margin-top: 30px;
+    margin-top: 30px;
 }
 #stats li {
-		-moz-border-radius: 6px;
-		-webkit-border-radius: 6px;
-		border-radius: 6px; /* border radius */
-		-moz-background-clip: padding;
-		-webkit-background-clip: padding-box;
-		background-clip: padding-box; /* prevents bg color from leaking outside the border */
-		background: #5e6363 url(../images/stats-bg.png) repeat-x 0 0;
-		color: #fff;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px; /* border radius */
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; /* prevents bg color from leaking outside the border */
+    background: #5e6363 url(../images/stats-bg.png) repeat-x 0 0;
+    color: #fff;
 }
 #stats li a:hover {
-		opacity: .5;
+    opacity: .5;
 }
 #stats .stats-count span {
-		color: #fff;
-		opacity: .5;
+    color: #fff;
+    opacity: .5;
 }
 #home-research  {
-	width: 297px;
-	float: left;
-	clear: both;
+    width: 297px;
+    float: left;
+    clear: both;
 }
 #home-research ul {
-	padding: 0.7em 0 0.6em 0.75em;
+    padding: 0.7em 0 0.6em 0.75em;
 }
 #home-research li {
-	line-height: 1.25em;
-	margin-top: 0.7em;
-	font-size: 0.9em;
+    line-height: 1.25em;
+    margin-top: 0.7em;
+    font-size: 0.9em;
 }
 #home-research li:last-child {
-	text-align:right;
-	padding: 4px 16px 0 0;
+    text-align:right;
+    padding: 4px 16px 0 0;
 }
 #home-research li span {
-	color: #fff;
-	background: url(../../../images/count-background.png) no-repeat;
-	width: 65px;
-	height: 27px;
-	display: inline-block;
-	padding: 6px 8px 0 0;
-	margin-left: 4px;
-	text-align: center;
+    color: #fff;
+    background: url(../../../images/count-background.png) no-repeat;
+    width: 65px;
+    height: 27px;
+    display: inline-block;
+    padding: 6px 8px 0 0;
+    margin-left: 4px;
+    text-align: center;
 }
 #home-academic-depts  {
-	width: 297px;
-	margin-left: 15px;
-	float: left;
+    width: 297px;
+    margin-left: 15px;
+    float: left;
 }
 #home-academic-depts h4,
 #home-faculty-mbrs h4,
@@ -953,18 +969,18 @@ a.view-all-style {
 }
 #home-academic-depts ul {
     list-style: disc outside url(../../../images/arrowIcon.gif);
-	padding: 0.4em 0 0.6em 1.8em;
+    padding: 0.4em 0 0.6em 1.8em;
 }
 #home-academic-depts li {
-	line-height: 1.25em;
-	padding-top: 1.0em;
-	padding-right: 4px;
-	font-size: 0.9em;
+    line-height: 1.25em;
+    padding-top: 1.0em;
+    padding-right: 4px;
+    font-size: 0.9em;
 }
 #home-faculty-mbrs  {
-	width: 297px;
-	margin: 0 0 20px 15px;
-	float: left;
+    width: 297px;
+    margin: 0 0 20px 15px;
+    float: left;
 }
 div#tempSpacing {
     margin-top:30px;
@@ -1011,8 +1027,8 @@ div#adjImgHeight {
     margin-bottom:10px;
 }
 #home-geo-focus  {
-	clear: both;
-	display: inline-block;
+    clear: both;
+    display: inline-block;
     margin-top: 30px;
     height: 632px;
     width: 921px;
@@ -1117,15 +1133,15 @@ ul#individual-tools-people li a {
 }
 .green.button,
 .green.button:visited {
-    background-color: #749a02;
+    background-color: #2485AE;
     color: #fff;
 }
 .green.button:hover {
-    background-color: #b2d15a;
+    background-color: #46a7cf;
 }
 .blue.button,
 .blue.button:visited {
-    background-color: #398aac;
+    background-color: #2485AE;
     color: #fff;
 }
 .blue.button:hover {
@@ -1149,8 +1165,8 @@ ul#individual-tools-people li a {
 }
 .individualList li,
 .individualList li span {
-  color: #9c9c9c;
- }
+    color: #9c9c9c;
+}
 .individualList li a {
     font-weight: normal;
     color: #2485AE;
@@ -1551,30 +1567,30 @@ p.address-line {
 /* SITE ADMIN DASHBOARD ---------------------------->  */
 /* ------------------------------------------------->  */
 #adminDashboard .pageBodyGroup {
-  padding: 0 1em .5em 1em;
+    padding: 0 1em .5em 1em;
 }
 #adminDashboard .pageBodyGroup h3 {
-  background-color: #fff;
-  border-bottom: 1px dotted #AFB2B2;
-  font-weight: bold;
-  padding: .625em;
-  color: #064D68;
-  margin-bottom: .625em;
+    background-color: #fff;
+    border-bottom: 1px dotted #AFB2B2;
+    font-weight: bold;
+    padding: .625em;
+    color: #064D68;
+    margin-bottom: .625em;
 }
 #adminDashboard .pageBodyGroup ul {
-  margin: 0 0 1em .6em;
+    margin: 0 0 1em .6em;
 }
 #adminDashboard .pageBodyGroup h4 {
-  color: #5E6363;
-  font-size: 1em;
-  margin-left: .6em;
-  font-weight: bold;
+    color: #5E6363;
+    font-size: 1em;
+    margin-left: .6em;
+    font-weight: bold;
 }
 #adminDashboard .pageBodyGroup h4 a {
-  color: #5E6363;
-  font-size: 1em;
-  margin-left: 0;
-  font-weight: bold;
+    color: #5E6363;
+    font-size: 1em;
+    margin-left: 0;
+    font-weight: bold;
 }
 
 
