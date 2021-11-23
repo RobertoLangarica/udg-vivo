@@ -26,7 +26,7 @@ services:
       - RESET_HOME=${RESET_HOME}
       - VERBOSE=${VERBOSE}
     ports:
-      - 8080:8080
+      - 8080:80
     volumes:
       - ${LOCAL_VIVO_HOME}:/usr/local/vivo/home
     networks:
